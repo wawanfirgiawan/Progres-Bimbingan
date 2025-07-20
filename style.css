@@ -1,0 +1,102 @@
+:root {
+  --primary: #0077b6;
+  --secondary: #023e8a;
+  --background: #f0f8ff;
+  --text-dark: #023047;
+  --white: #ffffff;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+}
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+header p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.progress-container {
+  background-color: #d0dfe9;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+  margin-bottom: 30px;
+}
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--secondary);
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  transition: width 0.4s ease;
+  font-weight: bold;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+.task-list li {
+  background: white;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.task-list input[type="checkbox"] {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background-color: var(--secondary);
+}
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

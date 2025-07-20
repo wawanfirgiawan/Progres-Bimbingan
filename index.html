@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoRumpon - Progress Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>AutoRumpon</h1>
+    <p>Inovasi Mesin Pemutar Otomatis sebagai Solusi Produktivitas Kelompok Usaha Tali Rumpon di Desa Karama</p>
+  </header>
+
+  <div class="container">
+    <div class="section-title">
+      <h2>Progress Kegiatan</h2>
+      <p>Pantau kemajuan tugas-tugas tim Anda secara real-time</p>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar-fill" id="progressFill">0%</div>
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+
+    <div class="buttons">
+      <button onclick="resetProgress()">🔁 Reset</button>
+      <button onclick="exportProgress()">📥 Export</button>
+      <button onclick="window.print()">🖨️ Cetak</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
