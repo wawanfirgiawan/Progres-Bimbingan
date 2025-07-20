@@ -1,13 +1,13 @@
 const tasks = [
-  { id: 1, text: "Pengumpulan data sekunder dan observasi lapangan - Ria Ramadani" },
-  { id: 2, text: "Wawancara dan identifikasi kebutuhan mitra - Nurul Imaniar" },
-  { id: 3, text: "Penyusunan desain teknis alat - Nurul Imaniar" },
-  { id: 4, text: "Perakitan dan pembuatan prototipe mesin - Muhammad Iqwal" },
-  { id: 5, text: "Uji coba awal dan pengujian fungsi alat - Tiara Ramadhani" },
-  { id: 6, text: "Pelatihan penggunaan alat kepada kelompok mitra - Febri Eka Wahyuni" },
-  { id: 7, text: "Evaluasi hasil uji coba dan penyempurnaan desain - Muhammad Iqwal" },
-  { id: 8, text: "Penyusunan panduan penggunaan dan dokumentasi kegiatan - Febri Eka Wahyuni" },
-  { id: 9, text: "Penyusunan laporan akhir dan luaran - Ria Ramadani" }
+  { id: 1, text: "Pengumpulan data sekunder dan observasi lapangan" },
+  { id: 2, text: "Wawancara dan identifikasi kebutuhan mitra" },
+  { id: 3, text: "Penyusunan desain teknis alat" },
+  { id: 4, text: "Perakitan dan pembuatan prototipe mesin" },
+  { id: 5, text: "Uji coba awal dan pengujian fungsi alat" },
+  { id: 6, text: "Pelatihan penggunaan alat kepada kelompok mitra" },
+  { id: 7, text: "Evaluasi hasil uji coba dan penyempurnaan desain" },
+  { id: 8, text: "Penyusunan panduan penggunaan dan dokumentasi kegiatan" },
+  { id: 9, text: "Penyusunan laporan akhir dan luaran" }
 ];
 
 function renderTasks() {
