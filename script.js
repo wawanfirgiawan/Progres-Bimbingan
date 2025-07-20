@@ -10,21 +10,28 @@ const tasks = [
   { id: 9, text: "Penyusunan laporan akhir dan luaran" }
 ];
 
-function renderTasks() {
-  const taskList = document.getElementById("taskList");
-  taskList.innerHTML = "";
-  tasks.forEach(task => {
-    const isChecked = localStorage.getItem(`task_${task.id}`) === 'true';
-    const li = document.createElement("li");
+tasks.forEach(task => {
+  const isChecked = localStorage.getItem(`task_${task.id}`) === 'true';
+  const li = document.createElement("li");
+  li.className = isChecked ? "completed" : "";
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.checked = isChecked;
-    checkbox.id = `task_${task.id}`;
-    checkbox.addEventListener("change", () => {
-      localStorage.setItem(checkbox.id, checkbox.checked);
-      updateProgress();
-    });
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.checked = isChecked;
+  checkbox.id = `task_${task.id}`;
+  checkbox.addEventListener("change", () => {
+    localStorage.setItem(checkbox.id, checkbox.checked);
+    renderTasks();  // render ulang agar class updated
+  });
+
+  const label = document.createElement("label");
+  label.htmlFor = checkbox.id;
+  label.textContent = task.text;
+
+  li.appendChild(checkbox);
+  li.appendChild(label);
+  taskList.appendChild(li);
+  });
 
     const label = document.createElement("label");
     label.htmlFor = checkbox.id;
