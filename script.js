@@ -1,37 +1,33 @@
 const tasks = [
-  { id: 1, text: "Pengumpulan data sekunder dan observasi lapangan" },
-  { id: 2, text: "Wawancara dan identifikasi kebutuhan mitra" },
-  { id: 3, text: "Penyusunan desain teknis alat" },
-  { id: 4, text: "Perakitan dan pembuatan prototipe mesin" },
-  { id: 5, text: "Uji coba awal dan pengujian fungsi alat" },
-  { id: 6, text: "Pelatihan penggunaan alat kepada kelompok mitra" },
-  { id: 7, text: "Evaluasi hasil uji coba dan penyempurnaan desain" },
-  { id: 8, text: "Penyusunan panduan penggunaan dan dokumentasi kegiatan" },
-  { id: 9, text: "Penyusunan laporan akhir dan luaran" }
+  { id: 1, text: "Pengumpulan data sekunder dan observasi lapangan - Ria Ramadani" },
+  { id: 2, text: "Wawancara dan identifikasi kebutuhan mitra - Nurul Imaniar" },
+  { id: 3, text: "Penyusunan desain teknis alat - Nurul Imaniar" },
+  { id: 4, text: "Perakitan dan pembuatan prototipe mesin - Muhammad Iqwal" },
+  { id: 5, text: "Uji coba awal dan pengujian fungsi alat - Tiara Ramadhani" },
+  { id: 6, text: "Pelatihan penggunaan alat kepada kelompok mitra - Febri Eka Wahyuni" },
+  { id: 7, text: "Evaluasi hasil uji coba dan penyempurnaan desain - Muhammad Iqwal" },
+  { id: 8, text: "Penyusunan panduan penggunaan dan dokumentasi kegiatan - Febri Eka Wahyuni" },
+  { id: 9, text: "Penyusunan laporan akhir dan luaran - Ria Ramadani" }
 ];
 
-tasks.forEach(task => {
-  const isChecked = localStorage.getItem(`task_${task.id}`) === 'true';
-  const li = document.createElement("li");
-  li.className = isChecked ? "completed" : "";
+function renderTasks() {
+  const taskList = document.getElementById("taskList");
+  taskList.innerHTML = "";
 
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.checked = isChecked;
-  checkbox.id = `task_${task.id}`;
-  checkbox.addEventListener("change", () => {
-    localStorage.setItem(checkbox.id, checkbox.checked);
-    renderTasks();  // render ulang agar class updated
-  });
+  tasks.forEach(task => {
+    const isChecked = localStorage.getItem(`task_${task.id}`) === 'true';
 
-  const label = document.createElement("label");
-  label.htmlFor = checkbox.id;
-  label.textContent = task.text;
+    const li = document.createElement("li");
+    li.className = isChecked ? "completed" : "";
 
-  li.appendChild(checkbox);
-  li.appendChild(label);
-  taskList.appendChild(li);
-  });
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = isChecked;
+    checkbox.id = `task_${task.id}`;
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(checkbox.id, checkbox.checked);
+      renderTasks(); // Re-render untuk update class
+    });
 
     const label = document.createElement("label");
     label.htmlFor = checkbox.id;
